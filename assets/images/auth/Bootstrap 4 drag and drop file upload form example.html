@@ -1,0 +1,371 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title>Snippet - GoSNippets</title>
+                                <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='' rel='stylesheet'>
+                                <style>* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: right;
+    height: 50vh;
+    width: 40vh;
+    background-image: linear-gradient(0deg, #EBFCFF 0%, #FFFFFF 89%);
+    font-family: Roboto, sans-serif;
+}
+
+
+.drop-it-hot {
+    background-color: #41162a;
+    border-radius: 7px;
+    width: 900px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 5px 0 rgba(black, .1);
+    overflow: hidden;
+}
+
+.drop-it-hot:after {
+    content: '';
+    position: absolute;
+    width: calc(500% - 20px);
+    height: calc(500% - 20px);
+    border: 2px dashed #E6E7F0;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+    position: absolute;
+    color: #4A90E2;
+    background-color: white;
+    border: 3px solid black;
+    width: 30px;
+    height: 30px;
+}
+
+.circle {
+    transition: transform 80ms ease-in;
+    z-index: 5;
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+.circle:before {
+    content: '';
+    background-color: #4B90E2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    transition: transform 250ms ease-in, opacity 20ms ease-in;
+    z-index: 0;
+}
+
+.circle:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.circle:hover {
+    transform: scale(1.2);
+    opacity: .9;
+}
+
+.circle:before {
+    transform: scale(5);
+    opacity: 1;
+}
+
+.circle:after {
+    border: 1px solid white;
+}
+
+svg {
+    color: white;
+    z-index: 1;
+}
+
+.highlight:before {
+    transform: scale(8);
+    opacity: 1;
+}
+
+.highlight:after {
+    border: 1px solid white;
+}
+
+svg {
+    color: white;
+    z-index: 1;
+}
+
+
+.choose-files {
+    align-self: flex-end;
+    z-index: 10;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button-wrapper.btn:hover {
+    background-color: #4E5056;
+}
+
+.label {
+    margin-bottom: 10px;
+    color: #4E5056;
+    font-size: 10px;
+}
+
+.button-wrapper input[type=file] {
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.btn {
+    border: none;
+    padding: 7px 10px;
+    border-radius: 50px;
+    background-color: #8263c9;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in;
+}
+
+#gallery {
+    position: absolute;
+    height: 70%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+img {
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+    filter: contrast(100%) brightness(100%) sepia(0%) hue-rotate(0deg);
+}
+
+
+.editor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    margin-top: -5px;
+    z-index: 60;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.is-visible {
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.range-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+.range {
+    -webkit-appearance: none;
+    height: 2px;
+    border-radius: 5px;
+    background: #E6E7F0;
+    outline: none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+::-moz-range-track {
+    background: #E6E7F0;
+    border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+    border: 0;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 8px;
+    background-color: #1A90E2;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 8px;
+    background-color: #4A90E2;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 8px;
+    background-color: #4A90E2;
+    cursor: pointer;
+}</style>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+                                <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+                            </head>
+                            <body oncontextmenu='return false' class='snippet-body'>
+                            <div class="drop-it-hot" id="drop-area">
+    <div class="circle">
+        <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+        </svg>
+    </div>
+    <form class="choose-files">
+        <div class="button-wrapper">
+            <label class="label" for="fileElem"></label>
+            <button type="button" class="btn">Choose image</button>
+            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+        </div>
+    </form>
+    <div id="gallery"></div>
+</div>
+
+<div class="editor">
+    <div class="range-wrapper">
+        <label for="contrast">Contrast</label>
+        <input class="range" name="contrast" value="100" type="range" min="0" max="200" value="0" data-unit="%">
+    </div>
+    <div class="range-wrapper">
+        <label for="brightness">Brightness</label>
+        <input class="range" name="brightness" value="100" type="range" min="0" max="200" data-unit="%">
+    </div>
+    <div class="range-wrapper">
+        <label for="blur">Hue</label>
+        <input class="range" name="hue-rotate" value="0" type="range" min="0" max="200" data-unit="deg">
+    </div>
+    <div class="range-wrapper">
+        <label for="sepia">Sepia</label>
+        <input class="range" name="sepia" value="0" type="range" min="0" max="200" data-unit="%">
+    </div>
+</div>
+                            <script type='text/javascript'>const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
+const dragHighlight = ['dragenter', 'dragover'];
+const dragUnighlight = ['dragleave', 'drop'];
+const inputRange = document.querySelectorAll('.editor input');
+
+const dropArea = document.getElementById('drop-area');
+const iconElement = document.querySelector('.circle');
+const editorElement = document.querySelector('.editor');
+
+const preventDefaults = (e) => {
+e.preventDefault();
+e.stopPropagation();
+};
+
+const highlight = () => {
+iconElement.classList.add('highlight');
+};
+
+const unhighlight = () => {
+iconElement.classList.remove('highlight');
+};
+
+const previewFile = (file) => {
+let reader = new FileReader();
+reader.readAsDataURL(file);
+reader.onloadend = function() {
+let img = document.createElement('img');
+img.src = reader.result;
+document.getElementById('gallery').appendChild(img);
+editorElement.classList.add('is-visible');
+}
+};
+
+const handleFiles = (files) => {
+files = [...files];
+files.forEach(previewFile);
+};
+
+const handleDrop = (e) => {
+let dt = e.dataTransfer;
+let files = dt.files;
+
+console.log('files', files);
+
+handleFiles(files);
+};
+
+function handleUpdate() {
+console.log(this.value);
+const suffix = this.dataset.unit;
+document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+}
+
+inputRange.forEach(input => input.addEventListener('change', handleUpdate));
+inputRange.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+dragEvents.forEach(eventName => {
+dropArea.addEventListener(eventName, preventDefaults, false)
+});
+
+dragHighlight.forEach(eventName => {
+dropArea.addEventListener(eventName, highlight, false)
+});
+
+dragUnighlight.forEach(eventName => {
+dropArea.addEventListener(eventName, unhighlight, false)
+});
+
+
+dropArea.addEventListener('drop', handleDrop, false);</script>
+                            </body>
+                        </html>
